@@ -1,5 +1,5 @@
 import 'package:dev_toast/dev_toast.dart';
-import 'package:dev_toast_platform_interface/dev_toast_method_channel.dart';
+import 'package:dev_toast/src/dev_toast_method_channel.dart';
 import 'package:dev_toast_platform_interface/dev_toast_platform_interface.dart';
 import 'package:dev_toast_platform_interface/model/toast_options.dart';
 import 'package:flutter_test/flutter_test.dart';

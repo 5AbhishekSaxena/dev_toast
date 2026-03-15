@@ -1,6 +1,5 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'dev_toast_method_channel.dart';
 import 'model/toast_options.dart';
 
 abstract class DevToastPlatform extends PlatformInterface {
@@ -9,7 +8,7 @@ abstract class DevToastPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static DevToastPlatform _instance = MethodChannelDevToast();
+  static DevToastPlatform _instance = _DefaultDevToastPlatform();
 
   /// The default instance of [DevToastPlatform] to use.
   ///
@@ -26,5 +25,14 @@ abstract class DevToastPlatform extends PlatformInterface {
 
   Future<void> showToast(String message, ToastOptions options) {
     throw UnimplementedError('showToast() has not been implemented.');
+  }
+}
+
+class _DefaultDevToastPlatform extends DevToastPlatform {
+  @override
+  Future<void> showToast(String message, ToastOptions options) {
+    throw UnimplementedError(
+      "DevToastPlatform has not been implemented for this platform.",
+    );
   }
 }

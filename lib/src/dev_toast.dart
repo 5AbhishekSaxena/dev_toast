@@ -1,3 +1,6 @@
+import 'package:dev_toast_platform_interface/dev_toast_platform_interface.dart';
+import 'package:dev_toast_platform_interface/model/toast_options.dart';
+
 import '../dev_toast.dart';
 
 class DevToast {

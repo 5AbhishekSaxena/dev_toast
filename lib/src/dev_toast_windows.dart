@@ -1,3 +1,5 @@
+import 'package:dev_toast_platform_interface/dev_toast_platform_interface.dart';
+import 'package:dev_toast_platform_interface/model/toast_options.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 

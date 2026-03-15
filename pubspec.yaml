@@ -13,7 +13,10 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   web: ^1.0.0
-  plugin_platform_interface: ^2.0.2
+#  plugin_platform_interface: ^2.0.2
+
+  dev_toast_platform_interface:
+    path: ./dev_toast_platform_interface
 
 dev_dependencies:
   flutter_test:

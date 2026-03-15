@@ -1,7 +1,7 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import '../dev_toast.dart';
 import 'dev_toast_method_channel.dart';
+import 'model/toast_options.dart';
 
 abstract class DevToastPlatform extends PlatformInterface {
   /// Constructs a DevToastPlatform.

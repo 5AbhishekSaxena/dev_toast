@@ -1,8 +1,7 @@
+import 'package:dev_toast_platform_interface/dev_toast_platform_interface.dart';
+import 'package:dev_toast_platform_interface/model/toast_options.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-
-import 'dev_toast_platform_interface.dart';
-import 'model/toast_options.dart';
 
 /// An implementation of [DevToastPlatform] that uses method channels.
 class MethodChannelDevToast extends DevToastPlatform {

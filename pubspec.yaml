@@ -41,7 +41,9 @@ flutter:
         package: com.example.dev_toast
         pluginClass: DevToastPlugin
       windows:
-        pluginClass: DevToastPluginCApi
+#        pluginClass: DevToastPluginCApi using dart instead
+        pluginClass: DevToastWindows
+        filename: dev_toast_windows.dart
       web:
         pluginClass: DevToastWeb
         fileName: dev_toast_web.dart

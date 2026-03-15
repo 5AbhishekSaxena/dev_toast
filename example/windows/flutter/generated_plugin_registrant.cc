@@ -6,9 +6,9 @@
 
 #include "generated_plugin_registrant.h"
 
-#include <dev_toast/dev_toast_plugin_c_api.h>
+#include <dev_toast/dev_toast_windows.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
-  DevToastPluginCApiRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("DevToastPluginCApi"));
+  DevToastWindowsRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("DevToastWindows"));
 }

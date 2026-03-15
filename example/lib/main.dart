@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:dev_toast/dev_toast.dart';
+import 'package:dev_toast/model/toast_options.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,35 +15,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
   final _devToastPlugin = DevToast();
 
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
+  void onShowToastPressed() {
+    ToastOptions options = const EmptyToastOptions();
 
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      platformVersion =
-          await _devToastPlugin.getPlatformVersion() ?? 'Unknown platform version';
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
+    if (kIsWeb) {
+      options = WebToastOptions(
+       showCloseButton: true,
+       stopOnFocs: true,
+       onClick:  () => print("toast clicked")
+      );
     }
 
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
+    _devToastPlugin.show(message: "Do something!", options: options);
   }
 
   @override
@@ -52,7 +36,16 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text('Plugin example app')),
-        body: Center(child: Text('Running on: $_platformVersion\n')),
+        body: Center(
+          child: Column(
+            children: [
+              ElevatedButton(
+                onPressed: onShowToastPressed,
+                child: const Text("Show Text"),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

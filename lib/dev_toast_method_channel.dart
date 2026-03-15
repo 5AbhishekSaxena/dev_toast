@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'dev_toast_platform_interface.dart';
+import 'model/toast_options.dart';
 
 /// An implementation of [DevToastPlatform] that uses method channels.
 class MethodChannelDevToast extends DevToastPlatform {
@@ -10,10 +11,7 @@ class MethodChannelDevToast extends DevToastPlatform {
   final methodChannel = const MethodChannel('dev_toast');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>(
-      'getPlatformVersion',
-    );
-    return version;
+  Future<void> showToast(String message, ToastOptions options) async {
+    await methodChannel.invokeMethod<void>('showToast', {"message": message});
   }
 }

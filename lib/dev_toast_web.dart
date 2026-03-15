@@ -9,6 +9,7 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 import 'dev_toast_platform_interface.dart';
 import 'model/toast_options.dart';
+import 'model/web_toast_options.dart';
 
 @JS("Toastify")
 extension type Toastify._(JSObject _) implements JSObject {

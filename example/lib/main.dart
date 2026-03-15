@@ -1,5 +1,7 @@
 import 'package:dev_toast/dev_toast.dart';
+import 'package:dev_toast/model/empty_toast_options.dart';
 import 'package:dev_toast/model/toast_options.dart';
+import 'package:dev_toast/model/web_toast_options.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -15,20 +17,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _devToastPlugin = DevToast();
-
   void onShowToastPressed() {
     ToastOptions options = const EmptyToastOptions();
+    final webOptions = WebToastOptions(
+      showCloseButton: true,
+      stopOnFocs: true,
+      onClick: () => print("toast clicked"),
+    );
 
     if (kIsWeb) {
-      options = WebToastOptions(
-       showCloseButton: true,
-       stopOnFocs: true,
-       onClick:  () => print("toast clicked")
-      );
+      options = webOptions;
     }
 
-    _devToastPlugin.show(message: "Do something!", options: options);
+    DevToast.show(message: "Do something!", options: options);
+    DevToast.web.show(message: "Do something!", options: webOptions);
   }
 
   @override

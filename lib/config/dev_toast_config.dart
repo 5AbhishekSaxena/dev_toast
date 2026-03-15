@@ -1,5 +1,4 @@
-import 'package:dev_toast/dev_toast.dart';
-import 'package:dev_toast/model/platform_options.dart';
+import '../model/toast_options.dart';
 
 class DevToastConfig {
   final PlatformToastOptions options;

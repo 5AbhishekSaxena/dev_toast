@@ -1,9 +1,7 @@
 import 'package:dev_toast/config/dev_toast_config.dart';
-import 'package:dev_toast/model/platform_options.dart';
 import 'package:dev_toast/model/toast_options.dart';
 
 import 'dev_toast_platform_interface.dart';
-import 'model/web_toast_options.dart';
 
 class DevToast {
   static DevToastConfig _config = const DevToastConfig();

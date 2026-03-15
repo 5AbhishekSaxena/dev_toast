@@ -63,6 +63,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  dev_toast_web:
+    dependency: transitive
+    description:
+      path: "../dev_toast_web"
+      relative: true
+    source: path
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:

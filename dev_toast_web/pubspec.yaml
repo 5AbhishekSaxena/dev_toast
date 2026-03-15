@@ -1,0 +1,35 @@
+name: dev_toast_web
+description: "A new Flutter package project."
+version: 0.0.1
+homepage:
+publish_to: 'none'
+
+environment:
+  sdk: ^3.11.1
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  dev_toast_platform_interface:
+    path: ../dev_toast_platform_interface
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  plugin:
+    implements: dev_toast
+    platforms:
+      web:
+        pluginClass: DevToastWeb
+        fileName: dev_toast_web.dart

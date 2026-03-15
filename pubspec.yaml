@@ -2,6 +2,7 @@ name: dev_toast
 description: "A new Flutter plugin project."
 version: 0.0.1
 homepage:
+publish_to: 'none'
 
 environment:
   sdk: ^3.11.1
@@ -17,6 +18,9 @@ dependencies:
 
   dev_toast_platform_interface:
     path: ./dev_toast_platform_interface
+
+  dev_toast_web:
+    path: ./dev_toast_web
 
 dev_dependencies:
   flutter_test:
@@ -44,12 +48,12 @@ flutter:
         package: com.example.dev_toast
         pluginClass: DevToastPlugin
       windows:
-#        pluginClass: DevToastPluginCApi using dart instead
+        #        pluginClass: DevToastPluginCApi using dart instead
         pluginClass: DevToastWindows
         filename: src/dev_toast_windows.dart
-      web:
-        pluginClass: DevToastWeb
-        fileName: src/dev_toast_web.dart
+#      web:
+#        pluginClass: DevToastWeb
+#        fileName: dev_toast_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

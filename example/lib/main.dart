@@ -1,5 +1,4 @@
 import 'package:dev_toast/dev_toast.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,19 +14,23 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   void onShowToastPressed() {
-    ToastOptions options = const EmptyToastOptions();
-    final webOptions = WebToastOptions(
+    final options = WebToastOptions(
       showCloseButton: true,
       stopOnFocs: true,
       onClick: () => print("toast clicked"),
     );
 
-    if (kIsWeb) {
-      options = webOptions;
-    }
-
+    // Cross-platform public API, automatically ignores options for other platforms
     DevToast.show(message: "Do something!", options: options);
-    DevToast.web.show(message: "Do something!", options: webOptions);
+
+    // Cross-platform public APIw with PlatformOptions
+    DevToast.show(
+      message: "Do something!",
+      options: PlatformToastOptions(web: options),
+    );
+
+    // using Platform specific API
+    DevToast.web.show(message: "Do something!", options: options);
   }
 
   @override

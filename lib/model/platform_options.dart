@@ -9,7 +9,19 @@ final class PlatformToastOptions implements ToastOptions {
 
   const PlatformToastOptions({this.web});
 
-  ToastOptions getPlatformOptions() {
+  factory PlatformToastOptions.from(ToastOptions? options) {
+    if (options is PlatformToastOptions) {
+      return options;
+    }
+
+    if (options is WebToastOptions) {
+      return PlatformToastOptions(web: options);
+    }
+
+    return const PlatformToastOptions();
+  }
+
+  ToastOptions resolve() {
     final defaultOptions = const EmptyToastOptions();
 
     if (kIsWeb && web != null) {
@@ -17,5 +29,11 @@ final class PlatformToastOptions implements ToastOptions {
     }
 
     return defaultOptions;
+  }
+
+  PlatformToastOptions merge(PlatformToastOptions? override) {
+    if (override == null) return this;
+
+    return PlatformToastOptions(web: override.web ?? web);
   }
 }

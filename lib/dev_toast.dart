@@ -1,3 +1,4 @@
+import 'package:dev_toast/config/dev_toast_config.dart';
 import 'package:dev_toast/model/platform_options.dart';
 import 'package:dev_toast/model/toast_options.dart';
 
@@ -5,17 +6,24 @@ import 'dev_toast_platform_interface.dart';
 import 'model/web_toast_options.dart';
 
 class DevToast {
-  static Future<void> show({
-    required String message,
-    ToastOptions options = const PlatformToastOptions(),
-  }) {
-    return DevToastPlatform.instance.showToast(
-      message,
-      options is PlatformToastOptions ? options.getPlatformOptions() : options,
-    );
-  }
+  static DevToastConfig _config = const DevToastConfig();
 
   static final web = _WebToastApi();
+
+  static void initialize({DevToastConfig config = const DevToastConfig()}) {
+    _config = config;
+  }
+
+  static Future<void> show({required String message, ToastOptions? options}) {
+    final PlatformToastOptions resolvedOptions = _config.options.merge(
+      PlatformToastOptions.from(options),
+    );
+
+    return DevToastPlatform.instance.showToast(
+      message,
+      resolvedOptions.resolve(),
+    );
+  }
 }
 
 class _WebToastApi {

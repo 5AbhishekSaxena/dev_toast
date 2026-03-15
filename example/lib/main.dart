@@ -1,5 +1,4 @@
 import 'package:dev_toast/dev_toast.dart';
-import 'package:dev_toast/model/toast_options.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 

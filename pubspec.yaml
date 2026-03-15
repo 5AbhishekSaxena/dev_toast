@@ -43,10 +43,10 @@ flutter:
       windows:
 #        pluginClass: DevToastPluginCApi using dart instead
         pluginClass: DevToastWindows
-        filename: dev_toast_windows.dart
+        filename: src/dev_toast_windows.dart
       web:
         pluginClass: DevToastWeb
-        fileName: dev_toast_web.dart
+        fileName: src/dev_toast_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

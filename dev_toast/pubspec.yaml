@@ -18,6 +18,7 @@ dependencies:
 
   dev_toast_web: ^0.0.1
   dev_toast_android: ^0.0.1
+  dev_toast_windows: ^0.0.1
 
 dev_dependencies:
   flutter_test:
@@ -35,5 +36,6 @@ flutter:
         default_package: dev_toast_web
       windows:
         #        pluginClass: DevToastPluginCApi using dart instead
-        dartPluginClass: DevToastWindows
-        filename: src/dev_toast_windows.dart
+#        dartPluginClass: DevToastWindows
+#        filename: src/dev_toast_windows.dart
+        default_package: dev_toast_windows

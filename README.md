@@ -38,10 +38,10 @@ DevToast.show(message: "Hello World", options: WebToastOptions(.));
 DevToast.web.show(message: "Hello World", options: WebToastOptions(..));
 ```
 
-### Global Configuration
-
 > [!NOTE]
 > Configurations are platform-safe; the plugin will gracefully ignore platform-specific settings that don't match the current environment (e.g., passing WebToastOptions while running on Android).
+
+### Global Configuration
 
 You can set up default behavior during app startup:
 ```dart

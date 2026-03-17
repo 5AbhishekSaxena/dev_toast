@@ -1,0 +1,37 @@
+name: dev_toast
+description: "dev_toast for Flutter, across all platforms."
+version: 0.0.1
+homepage:
+publish_to: 'none'
+
+environment:
+  sdk: ^3.11.1
+  flutter: '>=3.3.0'
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  dev_toast_platform_interface: ^0.0.1
+
+  dev_toast_web: ^0.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.dev_toast
+        pluginClass: DevToastPlugin
+      web:
+        default_package: dev_toast_web
+      windows:
+        #        pluginClass: DevToastPluginCApi using dart instead
+        dartPluginClass: DevToastWindows
+        filename: src/dev_toast_windows.dart

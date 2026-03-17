@@ -1,3 +1,4 @@
+import 'package:dev_toast_platform_interface/dev_toast_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'model/toast_options.dart';
@@ -8,7 +9,7 @@ abstract class DevToastPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static DevToastPlatform _instance = _DefaultDevToastPlatform();
+  static DevToastPlatform _instance = MethodChannelDevToast();
 
   /// The default instance of [DevToastPlatform] to use.
   ///

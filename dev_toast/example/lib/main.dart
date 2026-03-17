@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
     );
 
     // using Platform specific API
-    DevToast.web.show(message: "Do something!", options: options);
+    // DevToast.web.show(message: "Do something!", options: options);
   }
 
   @override

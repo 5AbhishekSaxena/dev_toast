@@ -17,6 +17,7 @@ dependencies:
   dev_toast_platform_interface: ^0.0.1
 
   dev_toast_web: ^0.0.1
+  dev_toast_android: ^0.0.1
 
 dev_dependencies:
   flutter_test:
@@ -27,8 +28,9 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.example.dev_toast
-        pluginClass: DevToastPlugin
+#        package: com.example.dev_toast
+#        pluginClass: DevToastPlugin
+        default_package: dev_toast_android
       web:
         default_package: dev_toast_web
       windows:

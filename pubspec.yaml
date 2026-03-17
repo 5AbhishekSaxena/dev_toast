@@ -9,3 +9,4 @@ workspace:
   - dev_toast/example
   - dev_toast_platform_interface
   - dev_toast_web
+  - dev_toast_android

@@ -1,0 +1,29 @@
+name: dev_toast_android
+description: "The android implementation of dev_toast plugin."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ^3.11.1
+  flutter: '>=3.3.0'
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dev_toast_platform_interface: ^0.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  plugin:
+    implements: dev_toast
+    platforms:
+      android:
+        package: com.example.dev_toast
+        pluginClass: DevToastPlugin
+        dartPluginClass: DevToastAndroid

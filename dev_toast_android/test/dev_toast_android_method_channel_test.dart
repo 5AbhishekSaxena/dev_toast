@@ -1,11 +1,11 @@
-import 'package:dev_toast_platform_interface/dev_toast_method_channel.dart';
+import 'package:dev_toast_android/dev_toast_android.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  MethodChannelDevToast platform = MethodChannelDevToast();
+  DevToastAndroid platform = DevToastAndroid();
   const MethodChannel channel = MethodChannel('dev_toast');
 
   setUp(() {
